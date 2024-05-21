@@ -1,0 +1,40 @@
+/* Footer */
+
+.footer {
+    background-color: black;
+
+    &__logof {
+        display: flex;
+        justify-content: left;
+        margin-bottom: 20px;
+
+        &__image {
+            max-width: 150px;
+            @include white-logo-filter;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: left;
+    
+
+        ul {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            li {
+                margin: 0 10px;
+                display: inline-block;
+                a {
+                    color: white; 
+                }
+                i {
+                padding-right: 20px ; 
+                }
+                
+            }   
+        }
+                
+    }
+}

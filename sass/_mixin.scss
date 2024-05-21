@@ -1,0 +1,15 @@
+/* Mixins */
+
+@mixin white-logo-filter {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
+  }
+@mixin button($secondaire, $primaire, $secondaire_hover, $primaire_hover) {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, $secondaire, $primaire);
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background: linear-gradient(to bottom, $secondaire_hover, $primaire_hover);
+    }
+  }

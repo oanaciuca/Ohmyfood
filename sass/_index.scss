@@ -1,0 +1,83 @@
+/* Page d'accueil */
+
+.localisation {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    i {
+        padding-right: 10px;
+    }
+    input {
+        background-color: inherit;
+        color: black;
+        font-weight: bold;
+        font-size: 1em;
+        border: none; 
+        }
+}
+
+.explor { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .button {
+        @include button($secondaire, $primaire, $secondaire_hover, $primaire_hover);
+        border-radius: 20px;
+        
+    }
+}
+
+.fonctionnement {
+    &__etapes { 
+        ul {
+            list-style: none;
+            li {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+            }
+            .etapes__i {
+                padding: 5px 10px 5px 10px;
+                background-color: $primaire;
+                border: none;
+                border-radius: 20px;
+                position: absolute;
+            }
+            li i {
+                margin: 0 20px 0 20px;
+            }
+            .etapes__boutton {
+                padding: 30px;
+                margin-left: 20px;
+                border-radius: 30px;
+                background-color: $bg-color;
+                display: inline-block;
+                vertical-align: middle;
+
+            }
+            }
+        }
+}
+
+@media (min-width: 1024px){
+
+    .exemple{
+        background-color: pink;
+        &__flex{
+            display: flex;
+        }
+        button{
+            width: 50%;
+        }
+        &__title{
+            color: green;
+        }
+        &__text{
+            color: orange;
+        }
+    }
+
+}

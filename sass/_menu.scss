@@ -1,0 +1,188 @@
+/* Page menu */
+
+.menu {
+    position: relative;
+    top: -30px;
+    background-color: $bg-color;
+    border-radius: 30px 30px 0 0;
+    &__title{
+        position: relative;
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            display: inline-block;
+        }
+        .heart {
+            position: absolute;
+            top: 30%;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(10px);
+        
+            .fa-heart {
+                position: absolute;
+                transition: opacity 0.3s;
+                color: $primaire;
+            }
+            
+            .fa-regular.fa-heart{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fa-solid.fa-heart {
+                opacity: 0; // Initialement invisible
+                z-index: 1;
+            }
+
+            &:hover .fa-regular.fa-heart {
+                opacity: 0; // Lorsque survolé, devient invisible
+            }
+
+            &:hover .fa-solid.fa-heart {
+                opacity: 1; // Lorsque survolé, devient visible
+            }
+        }
+
+    }
+    &__section {
+        padding: 20px;
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: normal !important;
+        }
+        .menu__items {
+            .menu__item {
+                padding: 20px 0 ;
+                .plat {
+                        
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: white;
+                    text-align: left;
+                    border: none;
+                    border-radius: 30px;
+                    .plat-info {
+                        padding-left: 20px;
+                    }
+                    .price-check {
+                        width: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        transition: background-color 0.3 ease;
+                        height: 100%;
+                    
+                        .prix {
+                                transition: transform 0.3s ease;
+                                display: flex;
+                                align-items: center;
+                        }
+                    
+                        .check-icon {
+                            display: none;
+                            height: 100%;
+                            background-color: transparent;
+                            padding-right: 10px;
+                            background-color: transparent;
+                            transition: background-color 0.3s ease;
+                                
+                        }
+                    }
+                    &:hover {
+                        .prix {
+                            transform: translateX(-50%);
+                            
+                        }
+                        .check-icon {
+                            display: inline-block;
+                            background-color: $tertiaire;
+                        }
+                    }        
+                }
+                
+            } 
+        }
+    }
+        
+    // Transition pour faire apparaître les sections progressivement
+    &__section.entrees {
+        transition-delay: 0.2s; /* Délai pour la section Entrées */
+    }
+
+    &__.plats {
+        transition-delay: 0.4s; /* Délai pour la section Plats */
+    }
+
+    &__.desserts {
+        transition-delay: 0.6s; /* Délai pour la section Desserts */
+    }
+    
+
+    &__commander {
+        @include button($secondaire, $primaire, $secondaire_hover, $primaire_hover);
+    }
+}
+
+.restaurants__card {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .card__nouveau {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        color: rgb(35, 90, 35);
+        background-color: $tertiaire;
+        padding: 5px ;
+    }
+    .card__content {
+        position: relative;
+        .content__title {
+            position: relative;
+            h3, p {
+                color: black;
+                text-decoration: none;
+            }
+        }
+        .content__heart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 50px;
+                
+            .fa-heart {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: opacity 0.3s;
+                color: $primaire;
+            }
+                    
+            .fa-regular.fa-heart{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fa-solid.fa-heart {
+                opacity: 0; // Initialement invisible
+                z-index: 1;
+            }
+
+            &:hover .fa-regular.fa-heart {
+                opacity: 0; // Lorsque survolé, devient invisible
+            }
+
+            &:hover .fa-solid.fa-heart {
+                opacity: 1; // Lorsque survolé, devient visible
+            }
+        }
+        
+    }
+}

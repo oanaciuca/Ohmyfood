@@ -8,7 +8,7 @@
     border-radius: 20px;
     background: linear-gradient(to bottom, $secondaire, $primaire);
     transition: background-color 0.3s ease;
-  
+    color: white;
     &:hover {
       background: linear-gradient(to bottom, $secondaire_hover, $primaire_hover);
     }

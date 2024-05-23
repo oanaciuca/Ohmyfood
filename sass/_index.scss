@@ -1,5 +1,10 @@
 /* Page d'accueil */
-
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
 .localisation {
     background-color: #D9D9D9;
     display: flex;
@@ -23,6 +28,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $bg-color;
+    h1 {
+        font-family: 'Roboto', sans-serif;
+    }
     .button {
         @include button($secondaire, $primaire, $secondaire_hover, $primaire_hover);
         border-radius: 20px;
@@ -31,35 +40,112 @@
 }
 
 .fonctionnement {
-    &__etapes { 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: red;
+    &__etapes {
+        width: 100%;
+        padding: 0;
         ul {
-            list-style: none;
+            padding: 0;
+            margin: 0;
             li {
                 display: flex;
                 align-items: center;
                 padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative;
             }
             .etapes__i {
-                padding: 5px 10px 5px 10px;
+                padding: 5px 10px;
                 background-color: $primaire;
                 border: none;
                 border-radius: 20px;
                 position: absolute;
             }
             li i {
-                margin: 0 20px 0 20px;
+                margin: 0 20px ;
             }
             .etapes__boutton {
+                flex-grow: 1;
                 padding: 30px;
                 margin-left: 20px;
                 border-radius: 30px;
                 background-color: $bg-color;
-                display: inline-block;
-                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                .fa-store {
+                    color: $primaire;
+                }
 
             }
             }
         }
+}
+
+.restaurants__card {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .card__nouveau {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        color: rgb(35, 90, 35);
+        background-color: $tertiaire;
+        padding: 5px ;
+    }
+    .card__content {
+        position: relative;
+        .content__title {
+            position: relative;
+            h3, p {
+                color: black;
+                text-decoration: none;
+            }
+        }
+        .content__heart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 50px;
+                
+            .fa-heart {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: opacity 0.3s;
+                color: $primaire;
+            }
+                    
+            .fa-regular.fa-heart{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fa-solid.fa-heart {
+                opacity: 0; // Initialement invisible
+                z-index: 1;
+            }
+
+            &:hover .fa-regular.fa-heart {
+                opacity: 0; // Lorsque survolé, devient invisible
+            }
+
+            &:hover .fa-solid.fa-heart {
+                opacity: 1; // Lorsque survolé, devient visible
+            }
+        }
+        
+    }
 }
 
 @media (min-width: 1024px){

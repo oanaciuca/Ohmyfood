@@ -19,6 +19,13 @@ ul {
 
 /* Mixins */
 /* Page d'accueil */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .localisation {
   background-color: #D9D9D9;
   display: flex;
@@ -42,43 +49,124 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f2f2f2;
+}
+.explor h1 {
+  font-family: "Roboto", sans-serif;
 }
 .explor .button {
   border: none;
   border-radius: 20px;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
   transition: background-color 0.3s ease;
+  color: white;
   border-radius: 20px;
 }
 .explor .button:hover {
   background: linear-gradient(to bottom, #fface8, #ae80e5);
 }
 
+.fonctionnement {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: red;
+}
+.fonctionnement__etapes {
+  width: 100%;
+  padding: 0;
+}
 .fonctionnement__etapes ul {
-  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .fonctionnement__etapes ul li {
   display: flex;
   align-items: center;
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 .fonctionnement__etapes ul .etapes__i {
-  padding: 5px 10px 5px 10px;
+  padding: 5px 10px;
   background-color: #9356DC;
   border: none;
   border-radius: 20px;
   position: absolute;
 }
 .fonctionnement__etapes ul li i {
-  margin: 0 20px 0 20px;
+  margin: 0 20px;
 }
 .fonctionnement__etapes ul .etapes__boutton {
+  flex-grow: 1;
   padding: 30px;
   margin-left: 20px;
   border-radius: 30px;
   background-color: #f2f2f2;
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.fonctionnement__etapes ul .etapes__boutton .fa-store {
+  color: #9356DC;
+}
+
+.restaurants__card {
+  position: relative;
+}
+.restaurants__card img {
+  width: 100%;
+}
+.restaurants__card .card__nouveau {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  color: rgb(35, 90, 35);
+  background-color: #99E2D0;
+  padding: 5px;
+}
+.restaurants__card .card__content {
+  position: relative;
+}
+.restaurants__card .card__content .content__title {
+  position: relative;
+}
+.restaurants__card .card__content .content__title h3, .restaurants__card .card__content .content__title p {
+  color: black;
+  text-decoration: none;
+}
+.restaurants__card .card__content .content__heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+.restaurants__card .card__content .content__heart .fa-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s;
+  color: #9356DC;
+}
+.restaurants__card .card__content .content__heart .fa-regular.fa-heart {
+  opacity: 1;
+  z-index: 2;
+}
+.restaurants__card .card__content .content__heart .fa-solid.fa-heart {
+  opacity: 0;
+  z-index: 1;
+}
+.restaurants__card .card__content .content__heart:hover .fa-regular.fa-heart {
+  opacity: 0;
+}
+.restaurants__card .card__content .content__heart:hover .fa-solid.fa-heart {
+  opacity: 1;
 }
 
 @media (min-width: 1024px) {
@@ -205,6 +293,7 @@ ul {
   border-radius: 20px;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
   transition: background-color 0.3s ease;
+  color: white;
 }
 .menu__commander:hover {
   background: linear-gradient(to bottom, #fface8, #ae80e5);

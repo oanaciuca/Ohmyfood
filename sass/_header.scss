@@ -3,11 +3,12 @@
 header {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
     .header__logo {
-        font-family: Shrikhand;
-        .header__logo__img {
-            max-width: 200px;
+        img {
+            max-width: 100px;
+            padding: 20px 80px;
         }
     }
 }

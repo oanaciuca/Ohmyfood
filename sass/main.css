@@ -222,6 +222,31 @@ ul {
   }
 }
 /* Page menu */
+/* Header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header .header__logo img {
+  max-width: 200px;
+  padding: 15px 500px;
+}
+
+
+  /* Header */
+header header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header header .header__logo img {
+  max-width: 200px;
+  padding: 15px 500px;
+}
+
 .menu {
   position: relative;
   top: -30px;
@@ -314,13 +339,13 @@ ul {
   display: inline-block;
   background-color: #99E2D0;
 }
-.menu__entrees {
+.menu__section.entrees {
   transition-delay: 0.2s; /* Délai pour la section Entrées */
 }
-.menu__plats {
+.menu__.plats {
   transition-delay: 0.4s; /* Délai pour la section Plats */
 }
-.menu__desserts {
+.menu__.desserts {
   transition-delay: 0.6s; /* Délai pour la section Desserts */
 }
 .menu__commander {

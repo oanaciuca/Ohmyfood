@@ -434,4 +434,20 @@ header .header__logo img {
 }
 .footer__link ul li i {
   padding-right: 20px;
+}
+@media (min-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer .footer__logof {
+    padding-top: 20px;
+  }
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }/*# sourceMappingURL=main.css.map */

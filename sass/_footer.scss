@@ -37,4 +37,21 @@
         }
                 
     }
+
+    @media (min-width: $desktop-min-width) {
+        
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        .footer__logof {
+            padding-top: 20px;
+        }
+        ul {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            
+        }
+    }
 }

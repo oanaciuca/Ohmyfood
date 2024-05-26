@@ -222,11 +222,6 @@ ul {
   }
 }
 /* Page menu */
-h1 {
-  font-family: "Shrikhand", cursive;
-  display: inline-block;
-}
-
 .menu {
   position: relative;
   top: -30px;

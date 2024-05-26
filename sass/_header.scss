@@ -1,14 +1,25 @@
 /* Header */
 
-header {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    .header__logo {
-        img {
-            max-width: 200px;
-            padding: 15px 500px;
+    &__logo {
+        display: flex;
+        flex-direction: row;
+        img .logo {
+            width: 100px;
+        }
+        .header-back { 
+            display: flex;
+            align-items: center;
+            margin-right: 0;       
+            span i.fa-solid.fa-arrow-left.custom-icon {
+                font-weight: bold;
+                font-size: 24px;
+                color:black;
+            } 
         }
     }
 }

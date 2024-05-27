@@ -1,30 +1,46 @@
 /* Page menu */
 
 .menu {
-    position: relative;
-    top: -30px;
     background-color: $bg-color;
-    border-radius: 30px 30px 0 0;
     &__image {
-        margin-top: 30px;
         img {
             width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+            position: relative;
         }
     }
-    &__title{
-        position: relative;
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        position: absolute;
+        margin-top: -50px;
+        z-index: 1;
+        transform: translateY(-40px);
+        background-color: $bg-color;
+        margin-bottom: -10px;
+        border-radius: 50px 50px 0 0;
+        
+        
+        
         h1 {
+            margin-left: 0;
+            padding-left: 20px;
             font-family: 'Shrikhand', cursive;
             display: inline-block;
         }
         .heart {
-            position: absolute;
-            top: 30%;
-            right: 20px;
+            padding-right: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             transform: translate(10px);
+            font-size: 30px;
+            font-weight: 100;
         
             .fa-heart {
                 position: absolute;
@@ -32,7 +48,7 @@
                 color: $primaire;
             }
             
-            .fa-regular.fa-heart{
+            .fa-regular.fa-heart {
                 opacity: 1;
                 z-index: 2;
             }
@@ -53,6 +69,7 @@
     }
     &__section {
         padding: 20px;
+        margin-top: 20px;
         h2 {
             font-family: 'Roboto', sans-serif;
             font-weight: normal !important;
@@ -132,63 +149,6 @@
     }
 }
 
-.restaurants__card {
-    position: relative;
-    img {
-        width: 100%;
-    }
-    .card__nouveau {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        border: none;
-        color: rgb(35, 90, 35);
-        background-color: $tertiaire;
-        padding: 5px ;
-    }
-    .card__content {
-        position: relative;
-        .content__title {
-            position: relative;
-            h3, p {
-                color: black;
-                text-decoration: none;
-            }
-        }
-        .content__heart {
-            position: absolute;
-            top: 0;
-            right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 50px;
-                
-            .fa-heart {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transition: opacity 0.3s;
-                color: $primaire;
-            }
-                    
-            .fa-regular.fa-heart{
-                opacity: 1;
-                z-index: 2;
-            }
-            .fa-solid.fa-heart {
-                opacity: 0; // Initialement invisible
-                z-index: 1;
-            }
-
-            &:hover .fa-regular.fa-heart {
-                opacity: 0; // Lorsque survolé, devient invisible
-            }
-
-            &:hover .fa-solid.fa-heart {
-                opacity: 1; // Lorsque survolé, devient visible
-            }
-        }
-        
-    }
+@media (min-width: $desktop-min-width) {
+    
 }

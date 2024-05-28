@@ -421,7 +421,7 @@ ul {
   font-size: large;
   color: white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .menu__commander:hover {
   background: linear-gradient(to bottom, #fface8, #ae80e5);

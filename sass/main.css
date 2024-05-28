@@ -405,11 +405,11 @@ ul {
   flex-direction: row;
   justify-content: space-between;
 }
-.header__logo .logo {
+.header__logo img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 80px;
+  width: 50%;
 }
 .header__logo .header-back {
   display: flex;
@@ -423,6 +423,13 @@ ul {
   color: black;
 }
 
+@media (min-width: 1024px) {
+  .header__logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
 /* Footer */
 .footer {
   background-color: black;

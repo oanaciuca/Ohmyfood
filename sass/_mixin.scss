@@ -6,9 +6,10 @@
 @mixin button($secondaire, $primaire, $secondaire_hover, $primaire_hover) {
     border: none;
     border-radius: 30px;
-    padding: 15px 25px;
+    padding: 15px 40px;
     background: linear-gradient(to bottom, $secondaire, $primaire);
     transition: background-color 0.3s ease;
+    font-size: large;
     color: white;
     &:hover {
       background: linear-gradient(to bottom, $secondaire_hover, $primaire_hover);

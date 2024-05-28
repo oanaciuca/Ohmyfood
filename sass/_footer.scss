@@ -6,11 +6,15 @@
     &__logof {
         display: flex;
         justify-content: left;
-        margin-bottom: 20px;
+        padding-top: 20px;
+        margin-left: 20px;
 
         &__image {
             max-width: 150px;
             @include white-logo-filter;
+            width: 120px;
+            font-size: small;
+            
         }
     }
 
@@ -26,6 +30,8 @@
             li {
                 margin: 0 10px;
                 display: inline-block;
+                padding-top: 10px;
+                padding-left: 20px;
                 a {
                     color: white; 
                 }
@@ -43,9 +49,10 @@
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
-        justify-content: center;
+        justify-content: right;
         .footer__logof {
-            padding-top: 20px;
+            padding-top: 10px;
+            padding-right: 20px;
         }
         ul {
                 display: flex;

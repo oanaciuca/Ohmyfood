@@ -380,10 +380,24 @@ ul {
 /* Header */
 header {
   padding: 10px;
-  text-align: center;
 }
-header img {
+header .arrow-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .arrow-logo .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+header .arrow-logo .logo img {
   width: 197px;
+}
+header .arrow-logo .arrow {
+  align-items: center;
+  font-size: large;
 }
 
 /* Footer */

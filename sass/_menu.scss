@@ -19,7 +19,9 @@
         background-color: $bg-color;
         margin-bottom: -10px;
         border-radius: 50px 50px 0 0;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
         
         
         h1 {
@@ -32,6 +34,8 @@
         .heart {
             font-size: 30px;
             font-weight: 100;
+            padding-bottom: 20px;
+            padding-right: 20px;
         
             .fa-heart {
                 position: absolute;
@@ -66,7 +70,7 @@
             font-weight: normal !important;
             border-bottom: 3px solid;
             border-color: $tertiaire;
-            width: 10%;
+            width: 60px;
         }
         ul{
             padding-left: 0px;
@@ -74,8 +78,7 @@
         .menu__items {
             .menu__item {
                 padding: 20px 0 ;
-                .plat {
-                        
+                .plat {  
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -83,16 +86,16 @@
                     text-align: left;
                     border: none;
                     border-radius: 30px;
+                    overflow: hidden; // Masque le débordement pour contenir l'icône de vérification
+                    position: relative; // Définit un contexte de positionnement pour les enfants positionnés absolument
                     .plat-info {
                         padding-left: 20px;
                     }
                     .price-check {
-                        width: 50px;
                         display: flex;
-                        justify-content: center;
+                        align-items: center;
                         position: relative;
-                        transition: background-color 0.3 ease;
-                        height: 100%;
+                        height: 90px;
                     
                         .prix {
 
@@ -108,22 +111,34 @@
                     
                         .check-icon {
                             display: none;
+                            position: absolute;
+                            background-color: $tertiaire;
+                            padding: 0 10px;
+                            transition: transform 0.3s ease, opacity 0.3s ease;
+                            right: 0;
+                            opacity: 0;
                             height: 100%;
-                            background-color: transparent;
-                            padding-right: 10px;
-                            background-color: transparent;
-                            transition: background-color 0.3s ease;
-                                
+                            width: 40px;
+                            top: 0;
+                            transform: translate(100%);
+                            border-radius: 0 30px 30px 0;
+                            color: white;
+                            font-size: 20px;
                         }
                     }
                     &:hover {
                         .prix {
                             transform: translateX(-50%);
+                            margin-right: 20px;
                             
                         }
                         .check-icon {
-                            display: inline-block;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transform: translate(0);
                             background-color: $tertiaire;
+                            opacity: 1;
                         }
                     }        
                 }

@@ -383,6 +383,39 @@ ul {
 }
 .menu__section .menu__items .menu__item {
   padding: 20px 0;
+  opacity: 0; /* Commence caché */
+  transform: translateY(20px); /* Début avec un déplacement vers le bas */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition douce */
+}
+.menu__section .menu__items .menu__item:nth-child(1) {
+  transition-delay: 0.1s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(2) {
+  transition-delay: 0.2s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(3) {
+  transition-delay: 0.3s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(4) {
+  transition-delay: 0.4s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(5) {
+  transition-delay: 0.5s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(6) {
+  transition-delay: 0.6s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(7) {
+  transition-delay: 0.7s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(8) {
+  transition-delay: 0.8s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(9) {
+  transition-delay: 0.9s; /* Délai progressif */
+}
+.menu__section .menu__items .menu__item:nth-child(10) {
+  transition-delay: 1s; /* Délai progressif */
 }
 .menu__section .menu__items .menu__item .plat {
   display: flex;
@@ -441,6 +474,10 @@ ul {
   transform: translate(0);
   background-color: #99E2D0;
   opacity: 1;
+}
+.menu:hover .menu__item {
+  opacity: 1; /* Devient visible */
+  transform: translateY(0); /* Revient à la position initiale */
 }
 .menu__commander {
   border: none;

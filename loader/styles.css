@@ -1,0 +1,78 @@
+body {
+  height: 200vh; /* S'assurer que le body est assez grand pour permettre le survol */
+}
+
+.loader {
+  position: fixed;
+  top: 150%; /* Position initiale à 1 km en bas */
+  left: 150%; /* Position initiale à 1 km à droite */
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transition: top 1.5s ease-in-out, left 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.square {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square1, .square2 {
+  border: 2px solid transparent;
+}
+
+.square1 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  transition: transform 6s linear;
+}
+
+.square2 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: center;
+  transition: transform 6s linear;
+}
+
+.icon {
+  position: absolute;
+  font-size: 30px;
+}
+
+/* Positionnement des icônes dans square1 */
+.square1 .icon:nth-child(1) { top: 0; left: 0; }
+.square1 .icon:nth-child(2) { bottom: 0; left: 0; }
+.square1 .icon:nth-child(3) { bottom: 0; right: 0; }
+.square1 .icon:nth-child(4) { top: 0; right: 0; }
+
+/* Positionnement des icônes dans square2 */
+.square2 .icon:nth-child(1) { top: 0; left: 0; }
+.square2 .icon:nth-child(2) { bottom: 0; left: 0; }
+.square2 .icon:nth-child(3) { bottom: 0; right: 0; }
+.square2 .icon:nth-child(4) { top: 0; right: 0; }
+.square2 .icon:nth-child(5) { bottom: 0; left: 0; }
+
+/* Animation au survol */
+body:hover .loader {
+  top: 50%; /* Amener le loader au centre */
+  left: 50%;
+  opacity: 1;
+}
+
+body:hover .square1 {
+  transform: translate(-50%, -50%) rotate(1080deg); /* Rotation plus longue */
+}
+
+body:hover .square2 {
+  transform: translate(-50%, -50%) rotate(-1080deg); /* Rotation plus longue */
+}

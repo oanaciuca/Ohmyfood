@@ -2,7 +2,7 @@
     img {
         width: 100%;
         height: 275px;
-        object-fit: cover;
+        object-fit: cover; /* L'image couvre toute la bannière en gardant son aspect ratio */
     }
 }
 
@@ -18,7 +18,7 @@
         transform: translateY(-40px);
         background-color: $bg-color;
         margin-bottom: -10px;
-        border-radius: 50px 50px 0 0;
+        border-radius: 50px 50px 0 0; /* Coins arrondis en haut de la section */
         justify-content: space-between;
         align-items: center;
         padding: 0 50px;
@@ -39,7 +39,7 @@
 
             .fa-heart {
                 position: absolute;
-                transition: opacity 0.3s;
+                transition: opacity 0.3s; /* Transition douce pour le changement d'opacité */
                 color: $primaire;
                 margin-right: 40px;
             }
@@ -55,11 +55,11 @@
             }
 
             &:hover .fa-regular.fa-heart {
-                opacity: 0; /* Lorsque survolé, devient invisible */
+                opacity: 0; /* Lors du survol, rendre invisible */
             }
 
             &:hover .fa-solid.fa-heart {
-                opacity: 1; /* Lorsque survolé, devient visible */
+                opacity: 1; /* Lors du survol, rendre visible */
             }
         }
     }
@@ -72,7 +72,7 @@
             font-weight: normal !important;
             border-bottom: 3px solid;
             border-color: $tertiaire;
-            width: 60px;
+            width: 60px; /* Largeur de la bordure inférieure */
         }
 
         ul {
@@ -83,12 +83,12 @@
             .menu__item {
                 padding: 20px 0;
                 opacity: 0; /* Commence caché */
-                transform: translateY(20px); /* Début avec un déplacement vers le bas */
-                transition: opacity 0.5s ease, transform 0.5s ease; /* Transition douce */
+                transform: translateY(20px); /* Déplacement initial vers le bas */
+                transition: opacity 0.5s ease, transform 0.5s ease; /* Transition douce pour l'opacité et le mouvement */
 
                 @for $i from 1 through 10 {
                     &:nth-child(#{$i}) {
-                        transition-delay: $i * 0.1s; /* Délai progressif */
+                        transition-delay: $i * 0.1s; /* Délai progressif pour chaque élément */
                     }
                 }
 
@@ -99,9 +99,9 @@
                     background-color: white;
                     text-align: left;
                     border: none;
-                    border-radius: 30px;
-                    overflow: hidden; /* Masque le débordement pour contenir l'icône de vérification */
-                    position: relative; /* Définit un contexte de positionnement pour les enfants positionnés absolument */
+                    border-radius: 30px; /* Coins arrondis */
+                    overflow: hidden; /* Masquer le débordement des éléments */
+                    position: relative; /* Contexte de positionnement pour les enfants absolus */
 
                     .plat-info {
                         padding-left: 20px;
@@ -130,14 +130,14 @@
                             position: absolute;
                             background-color: $tertiaire;
                             padding: 0 10px;
-                            transition: transform 0.3s ease, opacity 0.3s ease;
+                            transition: transform 0.3s ease, opacity 0.3s ease; /* Transition douce pour le mouvement et l'opacité */
                             right: 0;
                             opacity: 0;
                             height: 100%;
                             width: 40px;
                             top: 0;
-                            transform: translate(100%);
-                            border-radius: 0 30px 30px 0;
+                            transform: translate(100%); /* Hors de la vue initialement */
+                            border-radius: 0 30px 30px 0; /* Coins arrondis à droite */
                             color: white;
                             font-size: 20px;
                         }
@@ -153,9 +153,9 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            transform: translate(0);
+                            transform: translate(0); /* Déplacement dans la vue */
                             background-color: $tertiaire;
-                            opacity: 1;
+                            opacity: 1; /* Devenir visible */
                         }
                     }
                 }
@@ -164,7 +164,7 @@
     }
 
     &:hover .menu__item {
-        opacity: 1; /* Devient visible */
+        opacity: 1; /* Devenir visible */
         transform: translateY(0); /* Revient à la position initiale */
     }
 

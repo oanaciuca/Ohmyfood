@@ -1,89 +1,92 @@
-
 $loader-distance: 150%;
 $transition-duration: 1.5s;
 $rotation-duration: 6s;
 $rotation-angle: 1080deg;
+
 /* Styles pour le loader */
+body {
+  background-color: red; /* Fond rouge pour vérifier la disparition du loader */
+}
+
 .loader-container {
   height: 100vh; /* S'assurer que le conteneur est assez grand pour permettre le survol */
   overflow: hidden; /* Empêcher le défilement à l'intérieur du conteneur */
   position: relative; /* Pour que le hover fonctionne correctement */
+}
 
-  &:hover .loader {
-    top: 50%; /* Amener le loader au centre */
-    left: 50%;
-    opacity: 1;
-    pointer-events: all;
+.loader {
+  position: fixed;
+  top: 50%; /* Position initiale au centre */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity $transition-duration ease-in-out $rotation-duration;
 
-    .square1 {
-      transform: translate(-50%, -50%) rotate($rotation-angle); /* Rotation plus longue */
+  .square {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.square1, &.square2 {
+      border: 2px solid transparent;
     }
 
-    .square2 {
-      transform: translate(-50%, -50%) rotate(-$rotation-angle); /* Rotation plus longue */
+    &.square1 {
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+      transition: transform $rotation-duration linear;
     }
-  }
 
-  .loader {
-    position: fixed;
-    top: $loader-distance; /* Position initiale en bas */
-    left: $loader-distance; /* Position initiale à droite */
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-    pointer-events: none;
-    transition: top $transition-duration ease-in-out, 
-                left $transition-duration ease-in-out, 
-                opacity $transition-duration ease-in-out;
+    &.square2 {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transform-origin: center;
+      transition: transform $rotation-duration linear;
+    }
 
-    .square {
+    .icon {
       position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-size: 30px;
 
-      &.square1, &.square2 {
-        border: 2px solid transparent;
-      }
-
-      &.square1 {
-        width: 100px;
-        height: 100px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transform-origin: center;
-        transition: transform $rotation-duration linear;
-      }
-
-      &.square2 {
-        width: 150px;
-        height: 150px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        transform-origin: center;
-        transition: transform $rotation-duration linear;
-      }
-
-      .icon {
-        position: absolute;
-        font-size: 30px;
-
-        &:nth-child(1) { top: 0; left: 0; }
-        &:nth-child(2) { bottom: 0; left: 0; }
-        &:nth-child(3) { bottom: 0; right: 0; }
-        &:nth-child(4) { top: 0; right: 0; }
-        &:nth-child(5) { bottom: 0; left: 0; }
-      }
+      &:nth-child(1) { top: 0; left: 0; }
+      &:nth-child(2) { bottom: 0; left: 0; }
+      &:nth-child(3) { bottom: 0; right: 0; }
+      &:nth-child(4) { top: 0; right: 0; }
     }
   }
 
-  /* Disparition du loader après le survol */
-  &:not(:hover) .loader {
+  /* Disparition du loader après un délai */
+  &.fade-out {
     opacity: 0;
     pointer-events: none;
-    transition-delay: $transition-duration; /* Délai pour s'assurer que l'animation se termine */
   }
+}
+
+.loader-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity $transition-duration ease-in-out $rotation-duration;
+}
+
+.loader-container::before {
+  opacity: 0;
+  z-index: 0;
 }

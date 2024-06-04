@@ -4,12 +4,6 @@ body {
   background-color: red; /* Fond rouge pour vérifier la disparition du loader */
 }
 
-.loader-container {
-  height: 100vh; /* S'assurer que le conteneur est assez grand pour permettre le survol */
-  overflow: hidden; /* Empêcher le défilement à l'intérieur du conteneur */
-  position: relative; /* Pour que le hover fonctionne correctement */
-}
-
 .loader {
   position: fixed;
   top: 50%; /* Position initiale au centre */

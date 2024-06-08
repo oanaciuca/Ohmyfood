@@ -82,16 +82,6 @@
         .menu__items {
             .menu__item {
                 padding: 20px 0;
-                opacity: 0; /* Commence caché */
-                transform: translateY(20px); /* Déplacement initial vers le bas */
-                transition: opacity 0.5s ease, transform 0.5s ease; /* Transition douce pour l'opacité et le mouvement */
-
-                @for $i from 1 through 10 {
-                    &:nth-child(#{$i}) {
-                        transition-delay: $i * 0.1s; /* Délai progressif pour chaque élément */
-                    }
-                }
-
                 .plat {
                     display: flex;
                     justify-content: space-between;
@@ -130,13 +120,11 @@
                             position: absolute;
                             background-color: $tertiaire;
                             padding: 0 10px;
-                            transition: transform 0.3s ease, opacity 0.3s ease; /* Transition douce pour le mouvement et l'opacité */
                             right: 0;
                             opacity: 0;
                             height: 100%;
                             width: 40px;
                             top: 0;
-                            transform: translate(100%); /* Hors de la vue initialement */
                             border-radius: 0 30px 30px 0; /* Coins arrondis à droite */
                             color: white;
                             font-size: 20px;
@@ -172,5 +160,31 @@
         @include button($secondaire, $primaire, $secondaire_hover, $primaire_hover);
         display: flex;
         justify-content: center;
+    }
+    .entrees, .plats, .desserts{
+        opacity: 0;
+        animation: appear 1s;
+        animation-fill-mode: both; // L'animation ne revient pas à son point de départ
+    }
+
+    .entrees{
+        animation-delay: 1s;
+    }
+
+    .plats{
+        animation-delay: 2s;
+    }
+
+    .desserts{
+        animation-delay: 3s;
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

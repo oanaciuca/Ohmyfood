@@ -3,12 +3,6 @@ $transition-duration: 1.5s;
 $rotation-duration: 6s;
 $rotation-angle: 1080deg;
 
-/* Styles pour le loader */
-body {
-  background-color: red; /* Fond rouge pour vérifier la disparition du loader */
-}
-
-
 .loader {
   position: fixed;
   top: 50%; /* Position initiale au centre */

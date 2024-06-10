@@ -8,8 +8,8 @@ $rotation-angle: 1080deg;
   top: 50%; /* Position initiale au centre */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   opacity: 1;
   pointer-events: all;
   transition: opacity $transition-duration ease-in-out $rotation-duration;
@@ -59,6 +59,15 @@ $rotation-angle: 1080deg;
   &.fade-out {
     opacity: 0;
     pointer-events: none;
+  }
+}
+
+@keyframes loader{
+  0%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
   }
 }
 

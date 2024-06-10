@@ -19,30 +19,28 @@ ul {
 }
 
 /* Mixins */
+/* Durée de la rotation accélérée */
+/* Durée pendant laquelle le loader reste visible */
+/* Durée de la disparition */
+/* Opacité du fond */
 .loader {
   position: fixed;
   top: 50%; /* Position initiale au centre */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
+  width: 100vw; /* Taille du loader pour couvrir tout l'écran */
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8); /* Fond opaque */
   z-index: 3;
   opacity: 1;
   pointer-events: all;
-  animation: loader 3s;
-  animation-delay: 3s;
-  animation-fill-mode: both;
-  /* Disparition du loader après un délai */
+  animation: loader 6.5s ease-in-out forwards;
 }
 .loader .square {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.loader .square.square1, .loader .square.square2 {
-  border: 2px solid transparent;
 }
 .loader .square.square1 {
   width: 100px;
@@ -51,7 +49,7 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%);
   transform-origin: center;
-  transition: transform 6s linear;
+  animation: rotate1 2s linear infinite;
 }
 .loader .square.square2 {
   width: 150px;
@@ -60,7 +58,7 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
   transform-origin: center;
-  transition: transform 6s linear;
+  animation: rotate2 2s linear infinite reverse;
 }
 .loader .square .icon {
   position: absolute;
@@ -82,37 +80,32 @@ ul {
   top: 0;
   right: 0;
 }
-.loader.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
 
-@keyframes loader {
+@keyframes rotate1 {
   0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(315deg); /* -45 + 360 */
+  }
+}
+@keyframes loader {
+  0%, 80% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+    pointer-events: none;
   }
 }
-.loader-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  z-index: 2;
-  opacity: 1;
-  transition: opacity 1.5s ease-in-out 6s;
-}
-
-.loader-container::before {
-  opacity: 0;
-  z-index: 0;
-}
-
 /* Header */
 header {
   padding: 10px;

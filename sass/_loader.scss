@@ -1,32 +1,27 @@
-$loader-distance: 150%;
+$rotation-duration: 2s; /* Durée de la rotation accélérée */
 $transition-duration: 1.5s;
-$rotation-duration: 6s;
-$rotation-angle: 1080deg;
+$visible-duration: 5s; /* Durée pendant laquelle le loader reste visible */
+$fade-duration: 1.5s; /* Durée de la disparition */
+$background-opacity: 0.8; /* Opacité du fond */
 
 .loader {
   position: fixed;
   top: 50%; /* Position initiale au centre */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
+  width: 100vw; /* Taille du loader pour couvrir tout l'écran */
+  height: 100vh;
+  background-color: rgba(255, 255, 255, $background-opacity); /* Fond opaque */
   z-index: 3;
   opacity: 1;
   pointer-events: all;
-  animation: loader 3s;
-  animation-delay: 3s;
-  animation-fill-mode: both;
+  animation: loader $visible-duration + $fade-duration ease-in-out forwards;
 
   .square {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &.square1, &.square2 {
-      border: 2px solid transparent;
-    }
 
     &.square1 {
       width: 100px;
@@ -35,7 +30,7 @@ $rotation-angle: 1080deg;
       left: 50%;
       transform: translate(-50%, -50%);
       transform-origin: center;
-      transition: transform $rotation-duration linear;
+      animation: rotate1 $rotation-duration linear infinite;
     }
 
     &.square2 {
@@ -45,7 +40,7 @@ $rotation-angle: 1080deg;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-45deg);
       transform-origin: center;
-      transition: transform $rotation-duration linear;
+      animation: rotate2 $rotation-duration linear infinite reverse;
     }
 
     .icon {
@@ -58,37 +53,32 @@ $rotation-angle: 1080deg;
       &:nth-child(4) { top: 0; right: 0; }
     }
   }
+}
 
-  /* Disparition du loader après un délai */
-  &.fade-out {
-    opacity: 0;
-    pointer-events: none;
+@keyframes rotate1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-@keyframes loader{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+@keyframes rotate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(315deg); /* -45 + 360 */
+  }
 }
 
-.loader-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  z-index: 2;
-  opacity: 1;
-  transition: opacity $transition-duration ease-in-out $rotation-duration;
-}
-
-.loader-container::before {
-  opacity: 0;
-  z-index: 0;
+@keyframes loader {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }

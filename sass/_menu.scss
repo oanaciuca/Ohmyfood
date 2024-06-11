@@ -88,22 +88,34 @@ $transition-duration: 0.3s;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          width: 100%;
           background-color: white;
           text-align: left;
           border: none;
           border-radius: 30px; /* Coins arrondis */
           overflow: hidden; /* Masquer le débordement des éléments */
-          position: relative; /* Contexte de positionnement pour les enfants absolus */
-
+          padding: 10px;
+          height: 70px;
           .plat-info {
             padding-left: 20px;
+            
+            h3, p {
+                white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+                overflow: hidden; /* Cache le texte qui dépasse */
+                text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte coupé */
+                margin: 0; /* Enlever les marges par défaut */
+            
+              }
+            h3 {
+                padding-top: 10px;
+            }
           }
 
           .price-check {
             display: flex;
             align-items: center;
             position: relative;
-            height: 90px;
+        
 
             .prix {
               transition: transform $transition-duration ease; /* Animation du déplacement */
@@ -172,7 +184,7 @@ $transition-duration: 0.3s;
 
   .entrees, .plats, .desserts {
     opacity: 0;
-    animation: appear 1s;
+    animation: appear 1s ;
     animation-fill-mode: both; // L'animation ne revient pas à son point de départ
   }
 

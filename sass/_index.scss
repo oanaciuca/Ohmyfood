@@ -236,10 +236,10 @@
                     
                 .fa-heart {
                     position: absolute;
-                    top: 0;
+                    top: 22px;
                     left: 0;
+                    font-size: 22px;
                     transition: opacity 0.3s;
-                    color: $primaire;
                 }
                         
                 .fa-regular.fa-heart{
@@ -249,6 +249,9 @@
                 .fa-solid.fa-heart {
                     opacity: 0; // Initialement invisible
                     z-index: 1;
+                    background: linear-gradient(to bottom, $secondaire, $primaire);
+                    color: transparent;
+                    background-clip: text;
                 }
     
                 &:hover .fa-regular.fa-heart {

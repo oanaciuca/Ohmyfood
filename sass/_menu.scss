@@ -21,28 +21,25 @@ $transition-duration: 0.3s;
     background-color: $bg-color;
     margin-bottom: -10px;
     border-radius: 50px 50px 0 0; /* Coins arrondis en haut de la section */
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     padding: 0 50px;
 
     h1 {
       font-size: 28px;
       margin-left: 0;
-      padding-left: 20px;
       font-family: 'Shrikhand', cursive;
       display: inline-block;
     }
 
     .heart {
-      font-size: 30px;
-      font-weight: 100;
-      padding-bottom: 20px;
-      padding-right: 20px;
+      font-size: 25px;
+      position: relative;
+      top: 25px;
+      left: 15px;
 
       .fa-heart {
         position: absolute;
         transition: opacity 0.3s; /* Transition douce pour le changement d'opacité */
-        color: $primaire;
         margin-right: 40px;
       }
 
@@ -54,6 +51,9 @@ $transition-duration: 0.3s;
       .fa-solid.fa-heart {
         opacity: 0; /* Initialement invisible */
         z-index: 1;
+        background: linear-gradient(to bottom, $secondaire, $primaire);
+        color: transparent;
+        background-clip: text;
       }
 
       &:hover .fa-regular.fa-heart {
@@ -77,6 +77,16 @@ $transition-duration: 0.3s;
       width: 60px; /* Largeur de la bordure inférieure */
     }
 
+    h3{
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    p{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
     ul {
       padding-left: 0px;
     }
@@ -85,46 +95,37 @@ $transition-duration: 0.3s;
       .menu__item {
         padding: 20px 0;
         .plat {
+          position: relative;
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          width: 100%;
           background-color: white;
           text-align: left;
           border: none;
-          border-radius: 30px; /* Coins arrondis */
+          border-radius: 15px; /* Coins arrondis */
           overflow: hidden; /* Masquer le débordement des éléments */
           padding: 10px;
-          height: 70px;
+          h3, p{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
           .plat-info {
             padding-left: 20px;
-            
-            h3, p {
-                white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
-                overflow: hidden; /* Cache le texte qui dépasse */
-                text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte coupé */
-                margin: 0; /* Enlever les marges par défaut */
-            
-              }
-            h3 {
-                padding-top: 10px;
-            }
+            flex: 1;
           }
 
           .price-check {
             display: flex;
             align-items: center;
-            position: relative;
-        
+            position: absolute;
+            right: 0;
+            height: 100%;
 
             .prix {
               transition: transform $transition-duration ease; /* Animation du déplacement */
-              display: flex;
-              align-items: center;
               padding-right: 20px;
-              padding-top: 60px;
               margin-bottom: 10px;
-
+              padding-top: 30px;
               i {
                 padding-left: 5px;
               }
@@ -142,7 +143,6 @@ $transition-duration: 0.3s;
               height: 100%;
               width: 40px;
               top: 0;
-              border-radius: 0 30px 30px 0; /* Coins arrondis à droite */
               font-size: 30px;
               transition: right $transition-duration ease, opacity $transition-duration ease; /* Animation de la position et de l'opacité */
               i {
@@ -159,6 +159,10 @@ $transition-duration: 0.3s;
           &:hover {
             .prix {
               transform: translateX(-50px); /* Déplacement vers la gauche */
+            }
+
+            h3, p{
+              width: 70%;
             }
 
             .check-icon {
@@ -178,8 +182,6 @@ $transition-duration: 0.3s;
 
   &__commander {
     @include button($secondaire, $primaire, $secondaire_hover, $primaire_hover);
-    display: flex;
-    justify-content: center;
   }
 
   .entrees, .plats, .desserts {

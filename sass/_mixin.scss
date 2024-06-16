@@ -11,6 +11,7 @@
     transition: background-color 0.3s ease;
     font-size: large;
     color: white;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
     &:hover {
       background: linear-gradient(to bottom, $secondaire_hover, $primaire_hover);
     }

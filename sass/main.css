@@ -159,7 +159,7 @@ header .arrow-logo .arrow {
 
 /* Footer */
 .footer {
-  background-color: black;
+  background-color: #353535;
 }
 .footer__logof {
   display: flex;
@@ -214,7 +214,7 @@ header .arrow-logo .arrow {
 
 /* Page d'accueil */
 .localisation {
-  background-color: #D9D9D9;
+  background-color: #EAEAEA;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,6 +224,7 @@ header .arrow-logo .arrow {
   border-top: solid rgb(143, 130, 130);
   border-bottom: solid rgb(143, 130, 130);
   border-width: 1px 0 2px 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .localisation i {
   padding: 10px;
@@ -241,8 +242,9 @@ header .arrow-logo .arrow {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: #F6F6F6;
   margin-bottom: 50px;
+  margin-top: 5px;
 }
 .explor h1 {
   font-family: "Roboto", sans-serif;
@@ -263,6 +265,7 @@ header .arrow-logo .arrow {
   transition: background-color 0.3s ease;
   font-size: large;
   color: white;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin-bottom: 50px;
 }
@@ -308,7 +311,7 @@ header .arrow-logo .arrow {
   padding: 30px;
   margin-left: 20px;
   border-radius: 30px;
-  background-color: #f2f2f2;
+  background-color: #F6F6F6;
   display: inline-block;
   vertical-align: middle;
   width: 100%;
@@ -428,14 +431,14 @@ header .arrow-logo .arrow {
 .menu {
   max-width: 1100px;
   margin: 0 auto;
-  background-color: #f2f2f2;
+  background-color: #F6F6F6;
   padding-bottom: 30px;
 }
 .menu__title {
   display: flex;
   z-index: 1;
   transform: translateY(-40px);
-  background-color: #f2f2f2;
+  background-color: #F6F6F6;
   margin-bottom: -10px;
   border-radius: 50px 50px 0 0; /* Coins arrondis en haut de la section */
   justify-content: center;
@@ -580,6 +583,7 @@ header .arrow-logo .arrow {
   transition: background-color 0.3s ease;
   font-size: large;
   color: white;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
 }
 .menu__commander:hover {
   background: linear-gradient(to bottom, #fface8, #ae80e5);

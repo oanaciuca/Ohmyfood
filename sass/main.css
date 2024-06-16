@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* Variables */
+/* Durée de la rotation accélérée */
+/* Durée pendant laquelle le loader reste visible */
+/* Durée de la disparition */
+/* Opacité du fond */
 /* Balises générales */
 body {
   font-family: "Roboto", sans-serif;
@@ -23,10 +27,6 @@ ul {
 }
 
 /* Mixins */
-/* Durée de la rotation accélérée */
-/* Durée pendant laquelle le loader reste visible */
-/* Durée de la disparition */
-/* Opacité du fond */
 .loader {
   position: fixed;
   top: 50%; /* Position initiale au centre */
@@ -55,6 +55,26 @@ ul {
   transform-origin: center;
   animation: rotate1 2s linear infinite;
 }
+.loader .square.square1 .icon:nth-child(1) {
+  top: 0;
+  left: 0;
+  color: red;
+}
+.loader .square.square1 .icon:nth-child(2) {
+  bottom: 0;
+  left: 0;
+  color: orange;
+}
+.loader .square.square1 .icon:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  color: yellow;
+}
+.loader .square.square1 .icon:nth-child(4) {
+  top: 0;
+  right: 0;
+  color: yellowgreen;
+}
 .loader .square.square2 {
   width: 150px;
   height: 150px;
@@ -64,27 +84,30 @@ ul {
   transform-origin: center;
   animation: rotate2 2s linear infinite reverse;
 }
+.loader .square.square2 .icon:nth-child(1) {
+  top: 0;
+  left: 0;
+  color: cornflowerblue;
+}
+.loader .square.square2 .icon:nth-child(2) {
+  bottom: 0;
+  left: 0;
+  color: rgb(0, 94, 255);
+}
+.loader .square.square2 .icon:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  color: palevioletred;
+}
+.loader .square.square2 .icon:nth-child(4) {
+  top: 0;
+  right: 0;
+  color: purple;
+}
 .loader .square .icon {
   position: absolute;
   font-size: 30px;
 }
-.loader .square .icon:nth-child(1) {
-  top: 0;
-  left: 0;
-}
-.loader .square .icon:nth-child(2) {
-  bottom: 0;
-  left: 0;
-}
-.loader .square .icon:nth-child(3) {
-  bottom: 0;
-  right: 0;
-}
-.loader .square .icon:nth-child(4) {
-  top: 0;
-  right: 0;
-}
-
 @keyframes rotate1 {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -110,6 +133,7 @@ ul {
     pointer-events: none;
   }
 }
+
 /* Header */
 header {
   padding: 10px;
@@ -189,96 +213,6 @@ header .arrow-logo .arrow {
 }
 
 /* Page d'accueil */
-/* Variables */
-/* Import des variables existantes */
-/* Styles pour le loader */
-.loader-container {
-  height: 100vh; /* S'assurer que le conteneur est assez grand pour permettre le survol */
-  overflow: hidden; /* Empêcher le défilement à l'intérieur du conteneur */
-  position: relative; /* Pour que le hover fonctionne correctement */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Disparition du loader après l'animation */
-}
-.loader-container:hover .loader {
-  top: 50%; /* Amener le loader au centre */
-  left: 50%;
-  opacity: 1;
-  pointer-events: all;
-}
-.loader-container:hover .loader .square1 {
-  transform: translate(-50%, -50%) rotate(1080deg); /* Rotation plus longue */
-}
-.loader-container:hover .loader .square2 {
-  transform: translate(-50%, -50%) rotate(-1080deg); /* Rotation plus longue */
-}
-.loader-container .loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  opacity: 1;
-  transition: opacity 3s ease-in-out, transform 3s ease-in-out;
-}
-.loader-container .loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0);
-}
-.loader-container .loader .square {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid transparent;
-  transition: transform 3s linear;
-}
-.loader-container .loader .square.square1 {
-  width: 100px;
-  height: 100px;
-  transform: translate(-50%, -50%);
-  transform-origin: center;
-}
-.loader-container .loader .square.square2 {
-  width: 150px;
-  height: 150px;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  transform-origin: center;
-}
-.loader-container .loader .square .icon {
-  position: absolute;
-  font-size: 30px;
-}
-.loader-container .loader .square .icon:nth-child(1) {
-  top: 0;
-  left: 0;
-}
-.loader-container .loader .square .icon:nth-child(2) {
-  bottom: 0;
-  left: 0;
-}
-.loader-container .loader .square .icon:nth-child(3) {
-  bottom: 0;
-  right: 0;
-}
-.loader-container .loader .square .icon:nth-child(4) {
-  top: 0;
-  right: 0;
-}
-.loader-container .loader .square .icon:nth-child(5) {
-  bottom: 0;
-  left: 0;
-}
-.loader-container:not(:hover) .loader {
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0);
-  transition-delay: 3s; /* Délai pour s'assurer que l'animation se termine */
-}
-
 .localisation {
   background-color: #D9D9D9;
   display: flex;

@@ -1,8 +1,4 @@
-$rotation-duration: 2s; /* Durée de la rotation accélérée */
-$transition-duration: 1.5s;
-$visible-duration: 3s; /* Durée pendant laquelle le loader reste visible */
-$fade-duration: 1.5s; /* Durée de la disparition */
-$background-opacity: 0.8; /* Opacité du fond */
+
 
 .loader {
   position: fixed;
@@ -31,6 +27,10 @@ $background-opacity: 0.8; /* Opacité du fond */
       transform: translate(-50%, -50%);
       transform-origin: center;
       animation: rotate1 $rotation-duration linear infinite;
+      .icon:nth-child(1) { top: 0; left: 0; color: red; }
+      .icon:nth-child(2) { bottom: 0; left: 0; color: orange; }
+      .icon:nth-child(3) { bottom: 0; right: 0; color: yellow; }
+      .icon:nth-child(4) { top: 0; right: 0; color: yellowgreen; }
     }
 
     &.square2 {
@@ -41,17 +41,17 @@ $background-opacity: 0.8; /* Opacité du fond */
       transform: translate(-50%, -50%) rotate(-45deg);
       transform-origin: center;
       animation: rotate2 $rotation-duration linear infinite reverse;
+      .icon:nth-child(1) { top: 0; left: 0; color: cornflowerblue; }
+      .icon:nth-child(2) { bottom: 0; left: 0; color: rgb(0, 94, 255); }
+      .icon:nth-child(3) { bottom: 0; right: 0; color: palevioletred; }
+      .icon:nth-child(4) { top: 0; right: 0; color: purple; }
     }
 
     .icon {
       position: absolute;
       font-size: 30px;
 
-      &:nth-child(1) { top: 0; left: 0; }
-      &:nth-child(2) { bottom: 0; left: 0; }
-      &:nth-child(3) { bottom: 0; right: 0; }
-      &:nth-child(4) { top: 0; right: 0; }
-    }
+      
   }
 }
 
@@ -81,4 +81,5 @@ $background-opacity: 0.8; /* Opacité du fond */
     opacity: 0;
     pointer-events: none;
   }
+}
 }

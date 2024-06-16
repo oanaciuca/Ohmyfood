@@ -7,7 +7,10 @@ $secondaire_hover: lighten($secondaire, 10%);
 $primaire_hover: lighten($primaire, 10%);
 $bg-color: #f2f2f2;
 $desktop-min-width: 1024px;
-$loader-distance: 150%;
 $transition-duration: 1.5s;
-$rotation-duration: 6s;
 $rotation-angle: 1080deg;
+$rotation-duration: 2s; /* Durée de la rotation accélérée */
+$transition-duration: 1.5s;
+$visible-duration: 3s; /* Durée pendant laquelle le loader reste visible */
+$fade-duration: 1.5s; /* Durée de la disparition */
+$background-opacity: 0.8; /* Opacité du fond */

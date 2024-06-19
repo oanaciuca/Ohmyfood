@@ -13,7 +13,8 @@
         &__image {
             max-width: 150px;
             @include white-logo-filter;
-            width: 120px;
+            width: 139px;
+            height: 27px;
             font-size: small;
             
         }
@@ -33,6 +34,7 @@
                 display: inline-block;
                 padding-top: 10px;
                 padding-left: 20px;
+                height: 20px;
                 a {
                     color: white; 
                 }
@@ -51,9 +53,14 @@
         flex-direction: row-reverse;
         align-items: center;
         justify-content: right;
+        height: 114px;
         .footer__logof {
             padding-top: 10px;
             padding-right: 20px;
+            height: 27px;
+            &__image {
+                height: 20px;
+            }
         }
         ul {
                 display: flex;

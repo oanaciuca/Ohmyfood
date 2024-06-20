@@ -1,20 +1,21 @@
 /* Mixins */
-
+/* Mixin pour appliquer un filtre blanc au logo */
 @mixin white-logo-filter {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
-  }
+  filter: invert(100%) saturate(0%);
+}
+/* Mixin pour créer un bouton avec des styles de dégradé et des effets de survol */
 @mixin button($secondaire, $primaire, $secondaire_hover, $primaire_hover) {
     border: none;
     border-radius: 50px;
     width: 218px;
     height: 50px;
-    background: linear-gradient(to bottom, $secondaire, $primaire);
-    transition: background-color 0.3s ease;
+    background: linear-gradient(to bottom, $secondaire, $primaire); /* Applique un dégradé vertical du secondaire vers le primaire */
+    transition: background-color 0.3s ease; /* Ajoute une transition douce pour le changement de couleur au survol */
     font-size: 16px;
     color: white;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
     &:hover {
-      background: linear-gradient(to bottom, $secondaire_hover, $primaire_hover);
+      background: linear-gradient(to bottom, $secondaire_hover, $primaire_hover); /* Change le dégradé de fond lorsque le bouton est survolé */
     }
   }
   

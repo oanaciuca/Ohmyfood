@@ -27,6 +27,8 @@ ul {
 }
 
 /* Mixins */
+/* Mixin pour appliquer un filtre blanc au logo */
+/* Mixin pour créer un bouton avec des styles de dégradé et des effets de survol */
 .loader {
   position: fixed;
   top: 50%; /* Position initiale au centre de l'écran verticalement */
@@ -177,7 +179,7 @@ header .arrow-logo .arrow {
 }
 .footer__logof__image {
   max-width: 150px;
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
+  filter: invert(100%) saturate(0%);
   /* Filtre pour transformer le logo en blanc */
   width: 139px;
   width: 139px;
@@ -294,8 +296,8 @@ body {
   border-radius: 50px;
   width: 218px;
   height: 50px;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  transition: background-color 0.3s ease;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC); /* Applique un dégradé vertical du secondaire vers le primaire */
+  transition: background-color 0.3s ease; /* Ajoute une transition douce pour le changement de couleur au survol */
   font-size: 16px;
   color: white;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
@@ -308,7 +310,7 @@ body {
   margin-top: 15px;
 }
 .explor .button:hover {
-  background: linear-gradient(to bottom, #fface8, #ae80e5);
+  background: linear-gradient(to bottom, #fface8, #ae80e5); /* Change le dégradé de fond lorsque le bouton est survolé */
 }
 
 .fonctionnement {
@@ -626,14 +628,14 @@ body {
   border-radius: 50px;
   width: 218px;
   height: 50px;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  transition: background-color 0.3s ease;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC); /* Applique un dégradé vertical du secondaire vers le primaire */
+  transition: background-color 0.3s ease; /* Ajoute une transition douce pour le changement de couleur au survol */
   font-size: 16px;
   color: white;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
 }
 .menu__commander:hover {
-  background: linear-gradient(to bottom, #fface8, #ae80e5);
+  background: linear-gradient(to bottom, #fface8, #ae80e5); /* Change le dégradé de fond lorsque le bouton est survolé */
 }
 .menu .entrees, .menu .plats, .menu .desserts {
   opacity: 0;

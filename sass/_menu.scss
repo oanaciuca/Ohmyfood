@@ -1,5 +1,8 @@
-$transition-duration: 0.3s;
+/* Styles pour les menus*/
 
+$transition-duration: 0.3s; /* Durée de la transition pour les déplacements et les changements d'opacité des prix et des icônes de vérification */
+
+/* Styles pour l'image de la bannière */
 .banner-image {
   img {
     width: 100%;
@@ -16,7 +19,7 @@ $transition-duration: 0.3s;
 
   &__title {
     display: flex;
-    z-index: 1;
+    z-index: 1; /* Place l'élément au-dessus des autres avec un z-index inférieur */
     transform: translateY(-40px);
     background-color: $bg-color;
     margin-bottom: -10px;

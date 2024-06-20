@@ -10,7 +10,7 @@
   background-color: rgba(255, 255, 255, $background-opacity); /* Fond semi-transparent */
   z-index: 3; /* Priorité d'affichage supérieure pour le loader */
   opacity: 1; /* Loader visible au départ */
-  pointer-events: none; /* Empêcher les interactions avec le contenu sous-jacent */
+  pointer-events: all; /* Empêcher les interactions avec le contenu sous-jacent */
   animation: loader $visible-duration + $fade-duration ease-in-out forwards; /* Animation combinée de visibilité et de disparition du loader */
 
   .square {
@@ -79,7 +79,7 @@
   }
   100% {
     opacity: 0;
-    pointer-events: all; /* Réactiver les interactions avec le contenu sous-jacent après la disparition */
+    pointer-events: none; /* Réactiver les interactions avec le contenu sous-jacent après la disparition */
   }
 }
 }

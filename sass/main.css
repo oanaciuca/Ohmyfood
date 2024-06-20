@@ -48,7 +48,7 @@ ul {
   background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
   z-index: 3; /* Priorité d'affichage supérieure pour le loader */
   opacity: 1; /* Loader visible au départ */
-  pointer-events: none; /* Empêcher les interactions avec le contenu sous-jacent */
+  pointer-events: all; /* Empêcher les interactions avec le contenu sous-jacent */
   animation: loader 4.5s ease-in-out forwards; /* Animation combinée de visibilité et de disparition du loader */
   /* Animation de rotation pour le premier carré */
   /* Animation de rotation pour le deuxième carré */
@@ -144,7 +144,7 @@ ul {
   }
   100% {
     opacity: 0;
-    pointer-events: all; /* Réactiver les interactions avec le contenu sous-jacent après la disparition */
+    pointer-events: none; /* Réactiver les interactions avec le contenu sous-jacent après la disparition */
   }
 }
 
@@ -480,6 +480,9 @@ body {
     gap: 20px;
   }
 }
+/* Styles pour les menus*/
+/* Durée de la transition pour les déplacements et les changements d'opacité des prix et des icônes de vérification */
+/* Styles pour l'image de la bannière */
 .banner-image img {
   width: 100%;
   height: 275px;

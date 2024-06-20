@@ -524,16 +524,16 @@ body {
   margin-right: 40px;
 }
 .menu__title .heart .fa-regular.fa-heart {
-  opacity: 1;
-  z-index: 2;
+  opacity: 1; /* Visible par défaut */
+  z-index: 2; /* Position au-dessus de l'icône solide */
 }
 .menu__title .heart .fa-solid.fa-heart {
   opacity: 0; /* Initialement invisible */
   z-index: 1;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  color: transparent;
+  color: transparent; /* Couleur de l'icône transparente pour que le dégradé soit visible */
   -webkit-background-clip: text;
-          background-clip: text;
+          background-clip: text; /* Applique le dégradé à l'icône */
 }
 .menu__title .heart:hover .fa-regular.fa-heart {
   opacity: 0; /* Lors du survol, rendre invisible */

@@ -1,10 +1,12 @@
 /* Header */
 header {
     padding: 10px;
+    /* Section contenant le logo et la flèche */
     .arrow-logo {
         display: flex;
         flex-direction: row;
         align-items: center;
+        /* Section du logo */
         .logo {
             display: flex;
             align-items: center;
@@ -14,8 +16,8 @@ header {
                 width: 162px;
             }
         }
+        /* Section de la flèche */
         .arrow {
-            align-items: center;
             font-size: large;
         }
     

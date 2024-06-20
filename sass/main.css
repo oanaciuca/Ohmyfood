@@ -137,11 +137,14 @@ ul {
 /* Header */
 header {
   padding: 10px;
+  /* Section contenant le logo et la flèche */
 }
 header .arrow-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* Section du logo */
+  /* Section de la flèche */
 }
 header .arrow-logo .logo {
   display: flex;
@@ -153,7 +156,6 @@ header .arrow-logo .logo img {
   width: 162px;
 }
 header .arrow-logo .arrow {
-  align-items: center;
   font-size: large;
 }
 

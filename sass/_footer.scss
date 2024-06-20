@@ -1,42 +1,43 @@
 /* Footer */
 
+/* Style général du footer */
 .footer {
     background-color:#353535;
-    ;
-
+    
+    /* Section du logo */
     &__logof {
         display: flex;
-        justify-content: left;
+        justify-content: left;/* Alignement du logo à gauche */
         padding-top: 20px;
         margin-left: 20px;
 
         &__image {
             max-width: 150px;
-            @include white-logo-filter;
+            @include white-logo-filter;/* Filtre pour transformer le logo en blanc */
+            width: 139px;
             width: 139px;
             height: 27px;
-            font-size: small;
             
         }
     }
 
     &__link {
         display: flex;
-        justify-content: left;
+        justify-content: left;/* Alignement des liens à gauche */
     
 
         ul {
-            padding: 0;
+            padding: 0;/* Suppression des marges internes par défaut */
             display: flex;
-            flex-direction: column;
+            flex-direction: column;/* Affichage des liens en colonne */
             li {
-                margin: 0 10px;
+                margin: 0 10px;/* Marges horizontales */
                 display: inline-block;
                 padding-top: 10px;
                 padding-left: 20px;
                 height: 20px;
                 a {
-                    color: white; 
+                    color: white;/* Couleur des liens */ 
                 }
                 i {
                 padding-right: 20px ; 
@@ -46,7 +47,7 @@
         }
                 
     }
-
+    /* Media query pour les écrans de taille desktop et plus */
     @media (min-width: $desktop-min-width) {
         
         display: flex;

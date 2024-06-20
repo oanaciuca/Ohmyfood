@@ -158,40 +158,44 @@ header .arrow-logo .arrow {
 }
 
 /* Footer */
+/* Style général du footer */
 .footer {
   background-color: #353535;
+  /* Section du logo */
+  /* Media query pour les écrans de taille desktop et plus */
 }
 .footer__logof {
   display: flex;
-  justify-content: left;
+  justify-content: left; /* Alignement du logo à gauche */
   padding-top: 20px;
   margin-left: 20px;
 }
 .footer__logof__image {
   max-width: 150px;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
+  /* Filtre pour transformer le logo en blanc */
+  width: 139px;
   width: 139px;
   height: 27px;
-  font-size: small;
 }
 .footer__link {
   display: flex;
-  justify-content: left;
+  justify-content: left; /* Alignement des liens à gauche */
 }
 .footer__link ul {
-  padding: 0;
+  padding: 0; /* Suppression des marges internes par défaut */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Affichage des liens en colonne */
 }
 .footer__link ul li {
-  margin: 0 10px;
+  margin: 0 10px; /* Marges horizontales */
   display: inline-block;
   padding-top: 10px;
   padding-left: 20px;
   height: 20px;
 }
 .footer__link ul li a {
-  color: white;
+  color: white; /* Couleur des liens */
 }
 .footer__link ul li i {
   padding-right: 20px;

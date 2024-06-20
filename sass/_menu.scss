@@ -47,16 +47,16 @@ $transition-duration: 0.3s; /* Durée de la transition pour les déplacements et
       }
 
       .fa-regular.fa-heart {
-        opacity: 1;
-        z-index: 2;
+        opacity: 1; /* Visible par défaut */
+        z-index: 2; /* Position au-dessus de l'icône solide */
       }
 
       .fa-solid.fa-heart {
         opacity: 0; /* Initialement invisible */
         z-index: 1;
         background: linear-gradient(to bottom, $secondaire, $primaire);
-        color: transparent;
-        background-clip: text;
+        color: transparent; /* Couleur de l'icône transparente pour que le dégradé soit visible */
+        background-clip: text; /* Applique le dégradé à l'icône */
       }
 
       &:hover .fa-regular.fa-heart {

@@ -1,16 +1,21 @@
 /* Variables */
-
+/* Couleurs principales */
 $primaire: #9356DC;
 $secondaire: #FF79DA;
 $tertiaire: #99E2D0;
-$secondaire_hover: lighten($secondaire, 10%);
+/* Couleurs de survol */
+$secondaire_hover: lighten($secondaire, 10%); /* Couleur secondaire éclaircie de 10% pour les états de survol */
 $primaire_hover: lighten($primaire, 10%);
-$bg-color:#F6F6F6;
-$desktop-min-width: 1024px;
+/* Couleur de fond */
+$bg-color:#F6F6F6; /* Couleur de fond principale de la page */
+/* Points de rupture pour les médias queries */
+$desktop-min-width: 1024px; /* Largeur minimale de l'écran pour appliquer les styles de bureau */
+/* Durées des transitions et animations */
 $transition-duration: 1.5s;
 $rotation-angle: 1080deg;
 $rotation-duration: 2s; /* Durée de la rotation accélérée */
 $transition-duration: 1.5s;
 $visible-duration: 3s; /* Durée pendant laquelle le loader reste visible */
+/* Autres variables */
 $fade-duration: 1.5s; /* Durée de la disparition */
 $background-opacity: 0.8; /* Opacité du fond */

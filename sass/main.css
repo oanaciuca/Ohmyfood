@@ -29,31 +29,34 @@ ul {
 /* Mixins */
 .loader {
   position: fixed;
-  top: 50%; /* Position initiale au centre */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120vw; /* Taille du loader pour couvrir tout l'écran */
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8); /* Fond opaque */
-  z-index: 3;
-  opacity: 1;
-  pointer-events: all;
-  animation: loader 4.5s ease-in-out forwards;
+  top: 50%; /* Position initiale au centre de l'écran verticalement */
+  left: 50%; /* Position initiale au centre de l'écran horizontalement */
+  transform: translate(-50%, -50%); /* Ajustement pour centrer exactement */
+  width: 120vw; /* Taille du loader pour couvrir tout l'écran horizontalement*/
+  height: 100vh; /* Taille du loader pour couvrir tout l'écran verticalement */
+  background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+  z-index: 3; /* Priorité d'affichage supérieure pour le loader */
+  opacity: 1; /* Loader visible au départ */
+  pointer-events: none; /* Empêcher les interactions avec le contenu sous-jacent */
+  animation: loader 4.5s ease-in-out forwards; /* Animation combinée de visibilité et de disparition du loader */
+  /* Animation de rotation pour le premier carré */
+  /* Animation de rotation pour le deuxième carré */
+  /* Animation de disparition du loader */
 }
 .loader .square {
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Centrage du contenu de chaque carré */
 }
 .loader .square.square1 {
-  width: 100px;
+  width: 100px; /* Taille du premier carré */
   height: 100px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: center;
-  animation: rotate1 2s linear infinite;
+  top: 50%; /* Centrage vertical du premier carré */
+  left: 50%; /* Centrage horizontal du premier carré */
+  transform: translate(-50%, -50%); /* Ajustement pour centrer exactement le premier carré */
+  transform-origin: center; /* Point d'origine des transformations au centre du carré */
+  animation: rotate1 2s linear infinite; /* Animation de rotation constante */
 }
 .loader .square.square1 .icon:nth-child(1) {
   top: 0;
@@ -82,7 +85,7 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
   transform-origin: center;
-  animation: rotate2 2s linear infinite reverse;
+  animation: rotate2 2s linear infinite reverse; /* Animation de rotation constante inversée */
 }
 .loader .square.square2 .icon:nth-child(1) {
   top: 0;
@@ -113,7 +116,7 @@ ul {
     transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg); /* Rotation complète */
   }
 }
 @keyframes rotate2 {
@@ -121,7 +124,7 @@ ul {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(315deg); /* -45 + 360 */
+    transform: translate(-50%, -50%) rotate(315deg); /* Rotation totale de -45 + 360 degrés */
   }
 }
 @keyframes loader {
@@ -130,7 +133,7 @@ ul {
   }
   100% {
     opacity: 0;
-    pointer-events: none;
+    pointer-events: all; /* Réactiver les interactions avec le contenu sous-jacent après la disparition */
   }
 }
 

@@ -462,6 +462,9 @@ body {
   .localisation {
     border: none;
   }
+  .fonctionnement {
+    margin-bottom: 40px;
+  }
   .fonctionnement ul {
     display: flex;
     flex-direction: row;

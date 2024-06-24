@@ -178,10 +178,7 @@ $transition-duration: 0.3s; /* Durée de la transition pour les déplacements et
     }
   }
 
-  &:hover .menu__item {
-    opacity: 1; /* Devenir visible */
-    transform: translateY(0); /* Revient à la position initiale */
-  }
+  
 
   &__commander {
     @include button($secondaire, $primaire, $secondaire_hover, $primaire_hover);

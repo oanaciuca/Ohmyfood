@@ -636,10 +636,6 @@ body {
   right: 0; /* Déplacement dans la vue */
   opacity: 1; /* Devenir visible */
 }
-.menu:hover .menu__item {
-  opacity: 1; /* Devenir visible */
-  transform: translateY(0); /* Revient à la position initiale */
-}
 .menu__commander {
   border: none;
   border-radius: 50px;

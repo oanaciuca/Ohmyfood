@@ -314,7 +314,6 @@ body {
   white-space: nowrap; /* Empêche les retours à la ligne */
   justify-content: center;
   align-items: center;
-  padding: auto;
   margin-bottom: 50px;
   margin-top: 15px;
 }
